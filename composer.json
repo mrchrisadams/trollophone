@@ -1,0 +1,13 @@
+{
+    "name": "mrchrisadams/trollophone",
+    "description": "A silly app for pranking my friends with the trololsong",
+    "authors": [
+        {
+            "name": "Chris Adams",
+            "email": "wave@chrisadams.me.uk"
+        }
+    ],
+    "require": {
+        "twilio/sdk": "dev-master"
+    }
+}

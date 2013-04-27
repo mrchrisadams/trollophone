@@ -14,11 +14,13 @@ $sid = getenv("TWILIO_ACCOUNT_SID");
 $token = getenv("TWILIO_AUTH_TOKEN");
 
 $twiml_domain = getenv('TWIML_URL');
+$calling_from = getenv('TWILIO_ORIGIN_NUMBER');
+$calling_to   = getenv('TWILIO_DESTINATION_NUMBER');
 
 $client = new Services_Twilio($sid, $token);
 $call = $client->account->calls->create(
-  getenv('TWILIO_ORIGIN_NUMBER'),
-  getenv('TWILIO_DESTINATION_NUMBER'),
+  $calling_from,
+  $calling_to,
 
   // This is the TwiML file to read that points the call at the right MP3 file
   $twiml_domain
@@ -28,7 +30,7 @@ $call = $client->account->calls->create(
 <!-- And now let's display something on the actual page, too -->
 <body>
 
-<h1>It's Calling!</h1>
-<h2><?php phpinfo(); ?></h2>
+<h1>You can't see jack, but this number is being called!</h1>
+<h1>Calling from <?php print($calling_from); ?> to <?php print($calling_to); ?></h1>
 </body>
 </html>

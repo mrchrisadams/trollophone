@@ -7,24 +7,23 @@
 // fetch our library with composer
 require("vendor/autoload.php");
 
-
- // Your Account SID from www.twilio.com/user/account
+// authenticate with twillio
 $sid = getenv("TWILIO_ACCOUNT_SID");
- // Your Auth Token from www.twilio.com/user/account
 $token = getenv("TWILIO_AUTH_TOKEN");
 
-$twiml_domain = getenv('TWIML_URL');
+// set numbers to call from and to
 $calling_from = getenv('TWILIO_ORIGIN_NUMBER');
 $calling_to   = getenv('TWILIO_DESTINATION_NUMBER');
 
-$client = new Services_Twilio($sid, $token);
-$call = $client->account->calls->create(
-  $calling_from,
-  $calling_to,
+// point to the twiml xml file
+$twiml_url = getenv('TWIML_URL');
 
-  // This is the TwiML file to read that points the call at the right MP3 file
-  $twiml_domain
-);
+// create our client
+$client = new Services_Twilio($sid, $token);
+
+// and make our call...
+$call = $client->account->calls->create( $call_from, $call_to, $twiml_url);
+
 ?>
 </head>
 <!-- And now let's display something on the actual page, too -->

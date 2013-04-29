@@ -25,7 +25,7 @@ $client = new Services_Twilio($sid, $token);
 if (isset($_GET['troll'])) {
 
   if ($_GET['troll'] == TRUE) {
-    // $call = $client->account->calls->create( $call_from, $call_to, $twiml_url);
+    $call = $client->account->calls->create( $calling_from, $calling_to, $twiml_url);
     };
 };
 

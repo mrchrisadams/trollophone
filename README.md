@@ -69,6 +69,25 @@ Now the apps' running, just visit the page, and voila!
 
 ## That's it! Phonecall japery a-go-go!
 
+#### Running this on heroku
+
+#### 3. Deploying to a PaaS like heroku
+
+You can deploy this to heroku, by setting up a free version running on their infra with this command:
+
+```shell
+heroku create -s cedar \
+  --buildpack https://github.com/bergie/heroku-buildpack-php.git \
+  NAME_OF_YOUR_APP
+```
+
+You can can then push subsequent deploys with git, in the normal fashion as you develop:
+
+```shell
+git push heroku master
+```
+
+
 <!-- links -->
 
 [12factor]: http://12factor.net

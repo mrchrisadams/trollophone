@@ -65,7 +65,7 @@ Setenv TWILIO_DESTINATION_NUMBER 440794333333
 SetEnv TWIML_URL https://trollophone.com/call.xml
 ```
 
-Now the apps' running, just visit the page, and voila!
+Now the app's running, just visit the page, and voila!
 
 ## That's it! Phonecall japery a-go-go!
 
